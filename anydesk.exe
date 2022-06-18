@@ -1,0 +1,4 @@
+//Simple KQL hunting query for Anydesk remote access tool
+
+DeviceProcessEvents
+| where InitiatingProcessFileName endswith  "AnyDesk.exe"
