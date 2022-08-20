@@ -1,0 +1,2 @@
+DeviceEvents
+| where ActionType =="SecurityGroupCreated" and InitiatingProcessAccountName !endswith "$"
