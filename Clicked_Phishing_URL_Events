@@ -1,0 +1,10 @@
+// List possible targeted phishing url clicked by enduser KQL query 
+// It could be somehow noisy but you should except remote urls which can trigger legit 
+
+union DeviceEvents,DeviceNetworkEvents 
+| where ActionType =="BrowserLaunchedToOpenUrl" and InitiatingProcessFileName =="outlook.exe" and RemoteUrl contains "@companydomain.com" 
+and 
+(RemoteUrl !contains "xyz.com" and 
+RemoteUrl !contains "abc.com" and
+RemoteUrl !contains "successfactors.eu"and
+RemoteUrl !contains "company-my.sharepoint.com")
