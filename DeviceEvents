@@ -1,0 +1,4 @@
+// list all device event distinct by ActionType
+
+DeviceEvents
+| distinct ActionType
