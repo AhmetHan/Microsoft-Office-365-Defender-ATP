@@ -1,0 +1,4 @@
+// Internal to External RDP connections to public ips distinct by ip
+DeviceNetworkEvents
+| where RemotePort ==3389 and RemoteIPType =="Public" and ActionType =="ConnectionSuccess"
+| distinct RemoteIP
