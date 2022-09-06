@@ -1,0 +1,5 @@
+//detect and hunt winword abuse commonly used in order to downland malicious payload from attacker server
+
+union DeviceProcessEvents,DeviceNetworkEvents
+| where FolderPath endswith @"\winword.exe" and ProcessCommandLine contains "http"
+| where RemoteIPType =="public"
