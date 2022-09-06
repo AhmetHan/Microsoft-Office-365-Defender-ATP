@@ -1,0 +1,9 @@
+Hunt which process makes hits to the sinkhole address it allows to find suspicious process name and other details
+
+DeviceNetworkEvents 
+| where RemoteIP =="x.x.x.x" // puts here specific internal sinkhole ip address
+| project Timestamp,DeviceName,InitiatingProcessAccountUpn,InitiatingProcessFileName,RemoteUrl
+
+
+
+
