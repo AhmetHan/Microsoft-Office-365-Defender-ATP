@@ -1,0 +1,3 @@
+
+DeviceEvents
+| where ActionType =="BrowserLaunchedToOpenUrl" and RemoteUrl contains "http" and RemoteUrl endswith ".exe" and RemoteUrl !contains "microsoft.com"
