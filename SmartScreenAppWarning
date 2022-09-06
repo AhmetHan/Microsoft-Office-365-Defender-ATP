@@ -1,0 +1,3 @@
+// If it finds a match, SmartScreen warns you that the download has been blocked for your safety. SmartScreen also checks your downloaded files against a list of well-known and popular downloads by Microsoft Edge users and warns you if your download is not on this list. 
+DeviceEvents
+| where ActionType =="SmartScreenAppWarning"
