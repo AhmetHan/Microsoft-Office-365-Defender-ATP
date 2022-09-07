@@ -1,0 +1,8 @@
+// Hunting query for service installiation success
+// MS Event id 7045 is really important to in order to hunt againts threat actors activities 
+// for these purpose which equivalent this MDE query provides to hunt new service installiation activities 
+// active incident response engagament or threat hunting purpuse you can use this one
+
+DeviceEvents
+| where ActionType == "ServiceInstalled"
+| where AdditionalFields contains "suspicious service name(put here)"
