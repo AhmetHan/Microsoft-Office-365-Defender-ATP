@@ -1,0 +1,5 @@
+// InboundConnection Accepted Events from Public IPs
+DeviceNetworkEvents
+| where Timestamp > ago(3d)
+| where ActionType =="InboundConnectionAccepted" 
+| where RemoteIPType == "Public"
