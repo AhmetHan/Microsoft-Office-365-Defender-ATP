@@ -1,0 +1,6 @@
+//Remote Execution via WMIC
+//T1047 Windows Management Instrumentation
+DeviceProcessEvents
+| where FileName =="WMIC.exe" and 
+(ProcessCommandLine contains "/node:" or 
+ProcessCommandLine contains "-node:") and ProcessCommandLine contains "process call"
