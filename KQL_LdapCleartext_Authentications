@@ -1,0 +1,7 @@
+// LDAP cleartext authentications which accounts authenticated in last 30 days
+
+IdentityLogonEvents
+| where Timestamp > ago(30d)
+| where LogonType == "LDAP cleartext"
+| distinct DeviceName,AccountName,Timestamp,Application,LogonType,DestinationDeviceName
+| distinct AccountName
