@@ -1,0 +1,6 @@
+//Suspicious Bitsadmin Job via bitsadmin.exe
+
+DeviceProcessEvents
+| where ActionType =="ProcessCreated"
+| where FileName =="bitsadmin.exe"
+| where ProcessCommandLine contains "/download" or ProcessCommandLine contains "transfer" 
