@@ -1,0 +1,8 @@
+// WMI Execution via Microsoft Office Application
+// T1047 Windows Management Instrumentation
+// https://eqllib.readthedocs.io/en/latest/analytics/e6be5ffe-c765-4e13-962d-7eaae07aeaec.html
+
+let process = dynamic(["winword.exe","wordview.exe","wordpad.exe","powerpnt.exe","excel.exe","outlook.exe"]);
+union DeviceImageLoadEvents,DeviceProcessEvents
+| where FileName in ("wbemdisp.dll", "wbemcomn.dll", "wbemprox.dll","wmiutils.dll", "wbemsvc.dll", "fastprox.dll")
+| where InitiatingProcessFileName in~ (process)
