@@ -1,0 +1,4 @@
+// Suspicious Bitsadmin Job via PowerShell
+DeviceProcessEvents
+| where FileName =~ "powershell.exe"
+| where ProcessCommandLine contains "Start-BitsTransfer"
