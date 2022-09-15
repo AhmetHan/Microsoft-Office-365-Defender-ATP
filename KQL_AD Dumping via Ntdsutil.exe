@@ -1,0 +1,3 @@
+//AD Dumping via Ntdsutil.exe
+DeviceProcessEvents
+| where InitiatingProcessFileName =="ntdsutil.exe" and FileName=="ntds.dit"
