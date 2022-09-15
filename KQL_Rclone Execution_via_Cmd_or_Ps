@@ -1,7 +1,0 @@
-//Rclone Execution via Command Line or PowerShell
-//https://bradleyjkemp.dev/sigmadoc/rules/windows/deprecated/win_susp_rclone_exec.yml/
-DeviceProcessEvents
-| where InitiatingProcessFolderPath contains "rclone.exe"
-| where InitiatingProcessFileName =="powershell.exe" or InitiatingProcessFileName =="cmd.exe"
-| where ProcessCommandLine has_any("pass","user","copy","mega","sync","config","lsd","remote","ls")
-
