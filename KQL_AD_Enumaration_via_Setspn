@@ -1,0 +1,3 @@
+//
+DeviceImageLoadEvents
+| where FolderPath endswith @"\setspn.exe" and InitiatingProcessCommandLine contains "-Q"
