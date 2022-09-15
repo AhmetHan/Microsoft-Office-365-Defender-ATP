@@ -1,0 +1,2 @@
+// Advanced Port Scanner commonly used by the ransomware threat actors
+DeviceFileEvents | where FolderPath contains @"\AppData\Local\Temp\Advanced Port Scanner 2"
