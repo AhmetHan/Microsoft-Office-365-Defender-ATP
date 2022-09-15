@@ -1,0 +1,2 @@
+//
+DeviceFileEvents | where FolderPath contains @"\AppData\Local\Temp\Advanced IP Scanner 2"
