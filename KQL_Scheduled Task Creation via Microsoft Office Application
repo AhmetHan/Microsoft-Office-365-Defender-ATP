@@ -1,0 +1,2 @@
+DeviceImageLoadEvents
+| where InitiatingProcessFileName has_any ("excel.exe","winword.exe","powerpnt.exe","outlook.exe","wordpad.exe","wordview.exe") and FileName =="taskschd.dll"
