@@ -1,0 +1,8 @@
+//Raw Paste Service Access
+//https://github.com/SigmaHQ/sigma/blob/master/rules/proxy/proxy_raw_paste_service_access.yml
+DeviceNetworkEvents
+| where RemoteUrl contains "paste.ee/r/" or
+        RemoteUrl contains "pastebin.com/raw/" or 
+        RemoteUrl contains "hastebin.com/raw/" or
+        RemoteUrl contains "ghostbin.co/paste/.*\\/raw/"
+| project DeviceId,Timestamp,ReportId,InitiatingProcessFileName,DeviceName,InitiatingProcessAccountUpn
