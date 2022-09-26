@@ -1,0 +1,4 @@
+//Flash Player Update from Suspicious Location
+//https://github.com/SigmaHQ/sigma/blob/master/rules/proxy/proxy_susp_flash_download_loc.yml
+DeviceNetworkEvents
+| where RemoteUrl contains "/flash_install.php" and RemoteUrl endswith "install_flash_player.exe"
