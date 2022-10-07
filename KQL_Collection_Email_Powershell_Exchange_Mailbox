@@ -1,0 +1,3 @@
+//https://github.com/elastic/detection-rules/blob/main/rules/windows/collection_email_powershell_exchange_mailbox.toml
+DeviceProcessEvents
+| where InitiatingProcessFileName has_any ("powershell.exe", "pwsh.exe", "powershell_ise.exe") and ProcessCommandLine contains "New-MailboxExportRequest"
