@@ -1,0 +1,5 @@
+//https://1nk0x01.github.io/write-ups/soc-tips/data-exfiltration/
+DeviceProcessEvents
+| where InitiatingProcessFileName =~ "Powershell.exe"
+| where ProcessCommandLine contains "Invoke-WebRequest" and ProcessCommandLine contains "http:" and ProcessCommandLine contains "POST"
+| project Timestamp,ReportId,DeviceId,DeviceName,InitiatingProcessAccountUpn
