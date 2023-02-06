@@ -1,0 +1,106 @@
+// list all CloudApps Events by Action Type, in order to see which CloudApps events triggered in your existing infrastructure you can easily get all activities by users
+
+CloudAppEvents
+| distinct ActionType
+
+Example 100 events by Action type
+
+MipLabel
+Access
+HeartBeat
+SensitivityLabelApplied
+MessageCreatedHasLink
+Search
+ReactedToMessage
+ListKeys StorageAccounts
+SensitivityLabeledFileOpened
+ListForms
+Update StsRefreshTokenValidFrom Timestamp.
+EditForm
+Change user password.
+FileModifiedExtended
+FileAccessedExtended
+GetEntities Microsoft.Management
+MoveToDeletedItems
+Update
+SoftDelete
+OAuth2:Token
+Saml2:processrequest
+OAuth2:Authorize
+ListAccountSas StorageAccounts
+Write Reports
+WhatIf Deployments
+Append Solutions
+Login:login
+FileAccessed
+FilePreviewed
+FileSyncUploadedFull
+FileDownloaded
+FileModified
+FileSyncDownloadedFull
+PageViewed
+FileUploaded
+MessageReadReceiptReceived
+ListViewed
+AddedToGroup
+SharingSet
+Broke sharing inheritance
+GroupAdded
+CreateResponse
+CompanyLinkCreated
+Create
+FolderCreated
+FileRenamed
+FileRecycled
+Write Extensions
+Append Extensions
+Update device.
+Write ConfigurationProfileAssignments
+GenerateScreenshot
+Write GuestConfigurationAssignments
+SAS:ProcessAuth
+TIUrlClickData
+ViewReport
+MemberAdded
+Get-CSSimpleUrlConfiguration
+MemberRemoved
+MessageSent
+Update user.
+ViewRuntimeForm
+Update group.
+Delete user.
+ListCredential AccessProfiles
+Modify Solutions
+ListServiceSas StorageAccounts
+HardDelete
+TaskUpdated
+ListColumnCreated
+FolderModified
+DeviceAuth:PKeyAuth
+FileMoved
+SiteCollectionAdminRemoved
+SiteCollectionCreated
+SiteCollectionQuotaModified
+SiteLocksChanged
+ListUpdated
+Kmsi:kmsi
+Login:reprocess
+SAS:BeginAuth
+CompanyLinkUsed
+RetrieveSasUris RestorePoints
+ChatRetrieved
+Reset user password.
+SensitivityLabeledFileRenamed
+DefenseEvasion
+FolderRenamed
+FolderMoved
+SendAs
+AlertEntityGenerated
+AlertTriggered
+AlertUpdated
+UpdateFormSetting
+DisableSpecificResponse
+AuditIfNotExists Machines
+AppInstalled
+PermissionLevelAdded
+TeamSettingChanged
