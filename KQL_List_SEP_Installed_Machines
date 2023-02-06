@@ -1,0 +1,6 @@
+// ccsvchst.exe is core process Symantec EPP, if you are onboarding o365 defender you need this query in order to see which machines has SEP. After that you can 
+unique devices which you don't want to see SEP agents. 
+
+DeviceProcessEvents
+| where InitiatingProcessFileName contains "ccsvchst.exe"
+| distinct DeviceName
