@@ -1,0 +1,8 @@
+//https://www.picussecurity.com/resource/t1218-signed-binary-proxy-execution-of-the-mitre-attck-framework
+//control.exe is a Windows command-line utility used to launch Control Panel items. It can be used to execute a malicious DLL file that is embedded in an Alternate Data Stream (ADS) [13]:
+
+control.exe C:\Windows\tasks\file.txt:evil.dll
+
+DeviceProcessEvents
+| where InitiatingProcessFolderPath contains @"\SysWOW64\control.exe" or 
+InitiatingProcessFolderPath contains @"\Windows\System32\control.exe" and InitiatingProcessCommandLine endswith ".dll"
