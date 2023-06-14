@@ -1,0 +1,44 @@
+//https://www.elastic.co/guide/en/security/current/external-ip-lookup-from-non-browser-process.html
+
+DeviceNetworkEvents
+| where (RemoteUrl contains "api.ipify.org" or
+        RemoteUrl contains "freegeoip.app" or 
+        RemoteUrl contains "checkip.amazonaws.com" or 
+        RemoteUrl contains "checkip.dyndns.org" or
+        RemoteUrl contains "freegeoip.app" or 
+        RemoteUrl contains "icanhazip.com" or 
+        RemoteUrl contains "ifconfig." or
+        RemoteUrl contains "ipecho.net" or
+        RemoteUrl contains "ipinfo.io" or
+        RemoteUrl contains "ip.anysrc.net" or
+        RemoteUrl contains "myexternalip.com" or
+        RemoteUrl contains "showipaddress.com" or
+        RemoteUrl contains "whatismyipaddress.com" or
+        RemoteUrl contains "wtfismyip.com" or
+        RemoteUrl contains "ipapi.co" or 
+        RemoteUrl contains "ip-lookup.net" or
+        RemoteUrl contains "afraid.org" or
+        RemoteUrl contains "dyn.com" or
+        RemoteUrl contains "changeip.com" or
+        RemoteUrl contains "noip.com" or
+        RemoteUrl contains "now-dns.com" or
+        RemoteUrl contains "Dynu.com" or
+        RemoteUrl contains "pubyun.com" or
+        RemoteUrl contains "dynv6.com" or
+        RemoteUrl contains "gslb.me" or
+        RemoteUrl contains "dnsexit.com" or
+        RemoteUrl contains "duiadns.net" or
+        RemoteUrl contains "ydns.io " or
+        RemoteUrl contains "duckdns.org" or 
+        RemoteUrl contains "hopto.org" or 
+        RemoteUrl contains "ddns.info" or 
+        RemoteUrl contains "no-ip.org")
+    | where not(InitiatingProcessFolderPath has_any (
+    "c:\\program files (x86)\\microsoft\\edge\\application\\msedge.exe",
+    "c:\\program files (x86)\\google\\chrome\\application\\chrome.exe",
+    "c:\\program files\\google\\chrome\\application\\chrome.exe",
+    "c:\\program files\\fortinet\\forticlient\\fortisslvpndaemon.exe",
+    "c:\\program files (x86)\\nvidia corporation\\netservice\\nvnetworkservice.exe")
+    )and InitiatingProcessFolderPath !endswith "\\evernote.exe"
+     and InitiatingProcessFolderPath !endswith "\\teams.exe"
+   
