@@ -1,0 +1,11 @@
+if you would like to detect #Lumma Stealer activity in your domain environment? I have develop Microsoft Office 365 defender advanced hunting query(KQL) like below, you can easily detect & hunt this threat.
+
+
+DeviceNetworkEvents
+| where ActionType == 'HttpConnectionInspected'
+| extend json = todynamic(AdditionalFields)
+| extend direction = tostring(json.direction), user_agent = tostring(json.user_agent),status_code=tostring(json.status_code)
+| where direction == 'Out'
+| where user_agent contains "TeslaBrowser/5.5"
+
+// referance:https://twitter.com/Securityinbits/status/1706248064368050452?s=20
